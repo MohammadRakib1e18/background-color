@@ -6,7 +6,6 @@ let choice = [
 ]
 
 let setPickerColor = () => {
-    console.log(choice[0]);
     document.getElementById('red').style.backgroundColor   = `rgb(${choice[0][0]},${choice[0][1]},${choice[0][2]})`;
     document.getElementById('green').style.backgroundColor = `rgb(${choice[1][0]},${choice[1][1]},${choice[1][2]})`;
     document.getElementById('cyan').style.backgroundColor  = `rgb(${choice[2][0]},${choice[2][1]},${choice[2][2]})`;
