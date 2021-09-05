@@ -1,9 +1,14 @@
 /* import google font */
 @import url('https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@700&display=swap');
 
-body{
+#body{
     font-family: 'Kaisei Tokumin', serif !important;
-    color: red;
+}
+h2, p{
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+h2{
+    font-size: 2.5em !important;
 }
 #default{
     font-family: 'Dancing Script', cursive;
@@ -13,6 +18,7 @@ button{
     width: 100px;
     border: 2px solid black;
 }
+/* initial color of the buttons */
 #red{
     background-color: red;
 }

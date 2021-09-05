@@ -1,9 +1,11 @@
-
+// two-dimensional array to contain RGB color-set.
 let choice = [
+    // initial picker's color
+    // red       green        cyan        blue       yellow
     [255,0,0], [0,128,0], [0,255,255], [0,0,255], [255,255,0]
 ]
 
-let pickerColor = () => {
+let setPickerColor = () => {
     console.log(choice[0]);
     document.getElementById('red').style.backgroundColor   = `rgb(${choice[0][0]},${choice[0][1]},${choice[0][2]})`;
     document.getElementById('green').style.backgroundColor = `rgb(${choice[1][0]},${choice[1][1]},${choice[1][2]})`;
@@ -11,24 +13,27 @@ let pickerColor = () => {
     document.getElementById('blue').style.backgroundColor  = `rgb(${choice[3][0]},${choice[3][1]},${choice[3][2]})`;
     document.getElementById('yellow').style.backgroundColor= `rgb(${choice[4][0]},${choice[4][1]},${choice[4][2]}`;
 }
-const setColor = color => {
+// Set the background color with the selected color.
+const setBackgroundColor = color => {
      document.getElementById('body').style.backgroundColor =`rgb(${color[0]},${color[1]},${color[2]})`;
 }
-setColor([136, 171, 0]);
+// initial background color.
+setBackgroundColor([136, 171, 0]);
 
+// get the selected color.
 document.getElementById('buttons').addEventListener('click', function(event){
     const getIdColorName = event.target.id;
 
     switch (getIdColorName) {
-        case 'red': setColor(choice[0]);
+        case 'red': setBackgroundColor(choice[0]);
             break;
-        case 'green': setColor(choice[1]);
+        case 'green': setBackgroundColor(choice[1]);
             break;
-        case 'cyan': setColor(choice[2]);
+        case 'cyan': setBackgroundColor(choice[2]);
             break;
-        case 'blue': setColor(choice[3]);
+        case 'blue': setBackgroundColor(choice[3]);
             break;
-        case 'yellow': setColor(choice[4]);
+        case 'yellow': setBackgroundColor(choice[4]);
     }
 })
 
@@ -39,12 +44,13 @@ document.getElementById('default').addEventListener('click', function(){
 
 
 
-// generate new color set
+// generate new color set using Random-number
+// 255 indicates the highest possible value of rgb()-parameters.
 document.getElementById('new-colorSet').addEventListener('click', function(){
     for(let i=0; i<5; i++){
         choice[i][0]=parseInt(Math.random()*255);
         choice[i][1]=parseInt(Math.random()*255);
         choice[i][2]=parseInt(Math.random()*255);
     }
-    pickerColor();
+    setPickerColor();
 })
